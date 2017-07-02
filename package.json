@@ -14,7 +14,7 @@
     "dependencies": {
         "fs": "^3.10.0",
         "userhome": "1.0.0",
-        "path": "^2.11.0",        
+        "path": "^2.11.0"        
     },
     "devDependencies": {
         "fs": "^3.10.0",

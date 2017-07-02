@@ -20,7 +20,7 @@ APP.Journ = function (mode) {
 	var config = function () {
 		console.log("====== config ======");
 		util.makeCfg();
-	}
+	};
 
 	var setup = function () {
 		console.log("==== setup ====");
@@ -29,26 +29,35 @@ APP.Journ = function (mode) {
 		console.log("Create file system at: ", cfg.journdir);
 	};
 
+	var newDay = function (daysAgo) {
+		console.log("===== A New Day ====");
+		if (!isNaN(daysAgo)) {
+			util.recordLog(daysAgo * -1);
+		} else {
+			util.recordLog();
+		}
+	};
+
 	var showHelp = function () {
 		var cfg = util.readCfg();
 		console.log("====== JOURN USAGE ======\n");
 		console.log("journ ", "without args will display journal status.");
 		console.log("journ ", HELP_FLAG, " displays help.");
-		console.log("journ ", CONFIG_FLAG, " will enter the configurator.");
+		console.log("journ ", CONFIG_FLAG, " will creat a journ.cfg.json file.");
 		console.log("Your logfile is ", cfg.logfile);
 		console.log("\n");
 	};
 
 	var showList = function () {
 		console.log("====== showList ======");
-	}
+	};
 
 	var showStatus = function () {
 		var cfg = util.readCfg();
 		console.log("====== showStatus ======");
 		console.log(cfg);
 		console.log("Current Week ", dater.weekOfYear());
-	}
+	};
 
 	var write = function (arr) {
 		var cfg = util.readCfg();
@@ -60,6 +69,7 @@ APP.Journ = function (mode) {
 	return {
 		config: config,
 		setup: setup,
+		newDay: newDay,
 		showHelp : showHelp,
 		showStatus: showStatus,
 		write: write,
@@ -88,6 +98,9 @@ if (process.env.NODE_ENV !== 'test') {
 				break;
 			case Journ.SETUP_FLAG:
 				Journ.setup();
+				break;
+			case Journ.NEW_FLAG:
+				Journ.newDay(args[3]);
 				break;
 			case Journ.HELP_FLAG:
 				Journ.showHelp();
