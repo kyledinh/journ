@@ -48,6 +48,11 @@ APP.Journ = function (mode) {
 		}
 	};
 
+	var weekSummary = function (cfg) {
+		var cfg = cfg || util.readCfg();
+		util.weekSummary(cfg);
+	}
+
 	var showHelp = function () {
 		var cfg = util.readCfg();
 		console.log("====== JOURN USAGE ======\n");
@@ -93,6 +98,7 @@ APP.Journ = function (mode) {
 		processWeek: processWeek,
 		showHelp : showHelp,
 		showStatus: showStatus,
+		weekSummary: weekSummary,
 		write: write,
 		addTask: addTask,
 		HELP_FLAG: HELP_FLAG,
@@ -142,5 +148,6 @@ if (process.env.NODE_ENV !== 'test') {
 		}
 	} else {
 		Journ.showStatus();
+		Journ.weekSummary();
 	}
 }
