@@ -14,7 +14,9 @@ APP.Journ = function (mode) {
 	var NEW_FLAG = 'new';
 	var SETUP_FLAG = 'setup';
 	var CONFIG_FLAG = 'config';
+	var WEEK_FLAG = 'week';
 	var WRITE_FLAG = '.';
+	var ADD_TASK_FLAG = '+';
 
 	//PRIVATE
 	var config = function () {
@@ -38,13 +40,24 @@ APP.Journ = function (mode) {
 		}
 	};
 
+	var processWeek = function (int) {
+		if (!isNaN(int)) {
+			util.processWeek(int * -1);
+		} else {
+			util.lastWeek();
+		}
+	};
+
 	var showHelp = function () {
 		var cfg = util.readCfg();
 		console.log("====== JOURN USAGE ======\n");
 		console.log("journ ", "without args will display journal status.");
 		console.log("journ ", HELP_FLAG, " displays help.");
-		console.log("journ ", CONFIG_FLAG, " will creat a journ.cfg.json file.");
-		console.log("Your logfile is ", cfg.logfile);
+		console.log("journ ", CONFIG_FLAG, " will create a journ.cfg.json file.");
+		console.log("journ ", SETUP_FLAG, " creates the file system.");
+		console.log("journ ", WRITE_FLAG, "'new entry' will append to the today.md.");
+		console.log("journ ", NEW_FLAG, " will archive today.md and start a new one.");
+		console.log("Your working directory is ", cfg.journdir);
 		console.log("\n");
 	};
 
@@ -57,6 +70,7 @@ APP.Journ = function (mode) {
 		console.log("====== showStatus ======");
 		console.log(cfg);
 		console.log("Current Week ", dater.weekOfYear());
+		console.log("journ ", HELP_FLAG, " displays help.");
 	};
 
 	var write = function (arr) {
@@ -65,20 +79,29 @@ APP.Journ = function (mode) {
 		util.writeTodayLog(cfg, newline);
 	};
 
+	var addTask = function (arr) {
+		var cfg = util.readCfg();
+		var newline =  "* [ ] " + arr.join(" ") + "\n";
+		util.addTask(cfg, newline);
+	};
+
 	//PUBLIC
 	return {
 		config: config,
 		setup: setup,
 		newDay: newDay,
+		processWeek: processWeek,
 		showHelp : showHelp,
 		showStatus: showStatus,
 		write: write,
+		addTask: addTask,
 		HELP_FLAG: HELP_FLAG,
-		LIST_FLAG: LIST_FLAG,
 		NEW_FLAG: NEW_FLAG,
 		SETUP_FLAG: SETUP_FLAG,
 		CONFIG_FLAG: CONFIG_FLAG,
-		WRITE_FLAG: WRITE_FLAG
+		WRITE_FLAG: WRITE_FLAG,
+		ADD_TASK_FLAG: ADD_TASK_FLAG,
+		WEEK_FLAG: WEEK_FLAG
 
 	}
 };
@@ -105,14 +128,14 @@ if (process.env.NODE_ENV !== 'test') {
 			case Journ.HELP_FLAG:
 				Journ.showHelp();
 				break;
-			case Journ.LIST_FLAG:
-				Journ.showList();
+			case Journ.WEEK_FLAG:
+				Journ.processWeek(args[3]);
 				break;
 			case Journ.WRITE_FLAG:
-				args.shift(); // node
-				args.shift(); // journ exe
-				args.shift(); // . flag
-				Journ.write(args);
+				Journ.write(args.slice(3));
+				break;
+			case Journ.ADD_TASK_FLAG:
+				Journ.addTask(args.slice(3));
 				break;
 			default:
 				Journ.showHelp();
