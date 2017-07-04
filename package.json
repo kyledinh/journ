@@ -11,6 +11,10 @@
     },
     "author": "Kyle Dinh <kyledinh@gmail.com> (http://kyledinh.com)",
     "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/kyledinh/journ"
+    },
     "dependencies": {
 		"concat-files": "^0.0.0",
         "fs": "^3.10.0",
