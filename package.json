@@ -1,6 +1,6 @@
 {
     "name": "journ",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "Journaling via CLI with flat .md files ",
     "main": "journ.js",
     "bin": {
@@ -12,14 +12,12 @@
     "author": "Kyle Dinh <kyledinh@gmail.com> (http://kyledinh.com)",
     "license": "MIT",
     "dependencies": {
-        "fs": "^3.10.0",
 		"concat-files": "^0.0.0",
-        "userhome": "1.0.0",
-        "path": "^2.11.0"        
-    },
-    "devDependencies": {
         "fs": "^3.10.0",
         "path": "^2.11.0",
+        "userhome": "1.0.0"
+    },
+    "devDependencies": {
         "tap": "^10.0.0"
     }
 }
