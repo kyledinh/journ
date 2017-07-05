@@ -27,8 +27,8 @@ journ setup
 ## Usage
 ```
 journ new
-
 ```
+
 Takes the `today.md` file and renames at a dated file for yesterday. Then
 creates a new  `today.md` file.
 
@@ -43,32 +43,29 @@ Will write the new line of text to the end of today.md.
 journ status
 journ week
 journ   // for status
-
 ```
 
 ## File system
 ```
 kyle@KMBP:~/journ$ pwd
 /Users/kyle/journ
-kyle@KMBP:~/journ$ ll
-total 48
-drwxr--r--  10 kyle  staff   340B Jul  4 07:57 .
-drwxr-xr-x+ 50 kyle  staff   1.7K Jul  4 07:56 ..
-drwxr-xr-x   2 kyle  staff    68B Jul  4 09:34 2017
+kyle@KMBP:~/journ$ ls -l
+total 56
+drwxr--r--   9 kyle  staff   306B Jul  5 07:10 .
+drwxr-xr-x+ 50 kyle  staff   1.7K Jul  5 07:09 ..
+drwxr-xr-x   6 kyle  staff   204B Jul  4 09:43 2017
 -rw-r--r--   1 kyle  staff    95B Jul  4 07:56 2017-27-1.md
+-rw-r--r--   1 kyle  staff    29B Jul  4 07:57 2017-27-2.md
 -rw-r--r--   1 kyle  staff    46B Jul  3 10:08 task.md
--rw-r--r--   1 kyle  staff    29B Jul  4 07:57 today.md
--rw-r--r--   1 kyle  staff   170B Jul  4 08:42 week-27.md
-
+-rw-r--r--   1 kyle  staff    29B Jul  5 07:10 today.md
+-rw-r--r--   1 kyle  staff   199B Jul  5 07:10 week-27.md
 ```
-
 
 ## References
 I've references these other repos for this project. You may want to check them out, they have
 different approaches for journaling.
 
 * https://github.com/uglow/devlog
-
 
 ## License
 This software is licensed under the MIT Licence. See [license.md](license.md).
