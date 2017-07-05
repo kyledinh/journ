@@ -1,14 +1,14 @@
 {
   "name": "journ",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Journaling via CLI with flat .md files ",
   "main": "journ.js",
   "bin": {
     "journ": "journ.js"
   },
   "files": [
-      "lib",
-      "*.md"
+    "lib",
+    "*.md"
   ],
   "scripts": {
     "test": "tap test"
