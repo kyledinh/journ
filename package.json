@@ -16,8 +16,8 @@
     "url": "https://github.com/kyledinh/journ"
   },
   "dependencies": {
-    "concat-files": "^0.0.0",
-    "fs": "^0.0.0",
+    "concat-files": "^0.1.0",
+    "fs": "^0.0.1",
     "path": "^0.12.0",
     "userhome": "1.0.0"
   },
