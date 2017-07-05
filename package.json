@@ -1,27 +1,27 @@
 {
-    "name": "journ",
-    "version": "0.1.0",
-    "description": "Journaling via CLI with flat .md files ",
-    "main": "journ.js",
-    "bin": {
-        "journ": "journ.js"
-    },
-    "scripts": {
-        "test": "tap test"
-    },
-    "author": "Kyle Dinh <kyledinh@gmail.com> (http://kyledinh.com)",
-    "license": "MIT",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/kyledinh/journ"
-    },
-    "dependencies": {
-		"concat-files": "^0.0.0",
-        "fs": "^0.0.0",
-        "path": "^0.12.0",
-        "userhome": "1.0.0"
-    },
-    "devDependencies": {
-        "tap": "^10.0.0"
-    }
+  "name": "journ",
+  "version": "0.1.1",
+  "description": "Journaling via CLI with flat .md files ",
+  "main": "journ.js",
+  "bin": {
+    "journ": "journ.js"
+  },
+  "scripts": {
+    "test": "tap test"
+  },
+  "author": "Kyle Dinh <kyledinh@gmail.com> (http://kyledinh.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyledinh/journ"
+  },
+  "dependencies": {
+    "concat-files": "^0.0.0",
+    "fs": "^0.0.0",
+    "path": "^0.12.0",
+    "userhome": "1.0.0"
+  },
+  "devDependencies": {
+    "tap": "^10.0.0"
+  }
 }
