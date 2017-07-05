@@ -17,8 +17,8 @@
     },
     "dependencies": {
 		"concat-files": "^0.0.0",
-        "fs": "^3.10.0",
-        "path": "^2.11.0",
+        "fs": "^0.0.0",
+        "path": "^0.12.0",
         "userhome": "1.0.0"
     },
     "devDependencies": {
