@@ -6,6 +6,10 @@
   "bin": {
     "journ": "journ.js"
   },
+  "files": [
+      "lib",
+      "*.md"
+  ],
   "scripts": {
     "test": "tap test"
   },
