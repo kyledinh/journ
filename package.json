@@ -1,6 +1,6 @@
 {
   "name": "journ",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Journaling via CLI with flat .md files ",
   "main": "journ.js",
   "bin": {
