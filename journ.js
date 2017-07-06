@@ -5,7 +5,7 @@ var APP = APP || {};
 APP.Journ = function (mode) {
 
 	var Dater = require('./lib/dater');
-	var util = require('./lib/util');
+	var api = require('./lib/api');
 
 	var dater = new Dater();
 
@@ -21,40 +21,40 @@ APP.Journ = function (mode) {
 	//PRIVATE
 	var config = function () {
 		console.log("====== config ======");
-		util.makeCfg();
+		api.makeCfg();
 	};
 
 	var setup = function () {
 		console.log("==== setup ====");
-		var cfg = util.readCfg();
-		util.makeFileSystem(cfg);
+		var cfg = api.readCfg();
+		api.makeFileSystem(cfg);
 		console.log("Create file system at: ", cfg.journdir);
 	};
 
 	var newDay = function (daysAgo) {
 		console.log("===== A New Day ====");
 		if (!isNaN(daysAgo)) {
-			util.recordLog(daysAgo * -1);
+			api.recordLog(daysAgo * -1);
 		} else {
-			util.recordLog();
+			api.recordLog();
 		}
 	};
 
 	var processWeek = function (int) {
 		if (!isNaN(int)) {
-			util.processWeek(int * -1);
+			api.processWeek(int * -1);
 		} else {
-			util.lastWeek();
+			api.lastWeek();
 		}
 	};
 
 	var weekSummary = function (cfg) {
-		var cfg = cfg || util.readCfg();
-		util.weekSummary(cfg);
+		var cfg = cfg || api.readCfg();
+		api.weekSummary(cfg);
 	}
 
 	var showHelp = function () {
-		var cfg = util.readCfg();
+		var cfg = api.readCfg();
 		console.log("====== JOURN USAGE ======\n");
 		console.log("journ ", "without args will display journal status.");
 		console.log("journ ", HELP_FLAG, " displays help.");
@@ -71,7 +71,7 @@ APP.Journ = function (mode) {
 	};
 
 	var showStatus = function () {
-		var cfg = util.readCfg();
+		var cfg = api.readCfg();
 		console.log("====== showStatus ======");
 		console.log(cfg);
 		console.log("Current Week ", dater.weekOfYear());
@@ -79,15 +79,15 @@ APP.Journ = function (mode) {
 	};
 
 	var write = function (arr) {
-		var cfg = util.readCfg();
+		var cfg = api.readCfg();
 		var newline =  "* " + arr.join(" ") + "\n";
-		util.writeTodayLog(cfg, newline);
+		api.writeTodayLog(cfg, newline);
 	};
 
 	var addTask = function (arr) {
-		var cfg = util.readCfg();
+		var cfg = api.readCfg();
 		var newline =  "* [ ] " + arr.join(" ") + "\n";
-		util.addTask(cfg, newline);
+		api.addTask(cfg, newline);
 	};
 
 	//PUBLIC
@@ -128,15 +128,16 @@ if (process.env.NODE_ENV !== 'test') {
 			case Journ.SETUP_FLAG:
 				Journ.setup();
 				break;
+			case Journ.HELP_FLAG:
+				Journ.showHelp();
+				break;
 			case Journ.NEW_FLAG:
 				Journ.newDay(args[3]);
 				Journ.weekSummary();
 				break;
-			case Journ.HELP_FLAG:
-				Journ.showHelp();
-				break;
 			case Journ.WEEK_FLAG:
 				Journ.processWeek(args[3]);
+				Journ.weekSummary();
 				break;
 			case Journ.WRITE_FLAG:
 				Journ.write(args.slice(3));
