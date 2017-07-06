@@ -66,10 +66,6 @@ APP.Journ = function (mode) {
 		console.log("\n");
 	};
 
-	var showList = function () {
-		console.log("====== showList ======");
-	};
-
 	var showStatus = function () {
 		var cfg = api.readCfg();
 		console.log("====== showStatus ======");
