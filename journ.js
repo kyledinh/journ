@@ -137,11 +137,9 @@ if (process.env.NODE_ENV !== 'test') {
 				break;
 			case Journ.WRITE_FLAG:
 				Journ.write(args.slice(3));
-				Journ.weekSummary();
 				break;
 			case Journ.ADD_TASK_FLAG:
 				Journ.addTask(args.slice(3));
-				Journ.weekSummary();
 				break;
 			default:
 				Journ.showHelp();

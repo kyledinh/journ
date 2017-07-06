@@ -23,6 +23,9 @@ test('testing  ', function (t) {
 
 	t.deepEqual(12, dater.monthNum("December 3, 2017"));
 
+	t.deepEqual("W38", dater.getWeekISO("September 23, 2018"));
+	t.deepEqual("2018-W38-7", dater.fileName("September 23, 2018"));
+
 /*
 	dater.adjustDays(-2);
     t.deepEqual(5, dater.dayOfWeek());

@@ -63,11 +63,16 @@ drwxr-xr-x   6    204B Jul  4 09:43 2017
 -rw-r--r--   1    199B Jul  5 07:10 week-27.md
 ```
 
+## Documents
+
+* [Release Notes](docs/release.md)
+
 ## References
 I've references these other repos for this project. You may want to check them out, they have
 different approaches for journaling.
 
 * https://github.com/uglow/devlog
+* https://en.wikipedia.org/wiki/ISO_8601
 
 ## License
 This software is licensed under the MIT Licence. See [license.md](license.md).

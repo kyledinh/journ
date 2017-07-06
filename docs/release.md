@@ -1,5 +1,9 @@
 ## Release notes
 
+
+#### 0.2.0
+* ISO 8601 filename format "W23" for week 23
+
 #### 0.1.7
 * added release notes and docs directory
 * weekly summary will auto create `week-##.pdf` from `week-##.md`
