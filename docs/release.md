@@ -1,6 +1,6 @@
 ## Release notes
 
-#### 0.3.0
+#### 0.3.2
 * Added `pdf.css` to stylize the weeks pdfs. New cfg entry in `pdfcss` setting in `journ.cfg.json`.
 
 #### 0.2.0 - 0.2.2
