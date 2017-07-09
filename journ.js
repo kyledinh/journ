@@ -28,7 +28,7 @@ APP.Journ = function (mode) {
 		console.log("==== setup ====");
 		var cfg = api.readCfg();
 		api.makeFileSystem(cfg);
-		console.log("Create file system at: ", cfg.journdir);
+		console.log("Create file system at: ", cfg.journdir, cfg);
 	};
 
 	var newDay = function (daysAgo) {
