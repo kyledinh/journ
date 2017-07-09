@@ -1,6 +1,6 @@
 {
   "name": "journ",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Journaling via CLI with flat .md files ",
   "keywords": [
     "weekly",
@@ -20,6 +20,7 @@
     "journ": "journ.js"
   },
   "files": [
+    "assets",
     "lib",
     "*.md"
   ],
