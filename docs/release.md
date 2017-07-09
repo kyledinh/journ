@@ -1,8 +1,9 @@
 ## Release notes
 
 
-#### 0.2.0
+#### 0.2.0 - 0.2.2
 * ISO 8601 filename format "W23" for week 23
+* With `new` flag, today.md will move to the atime (Modified date) filename
 
 #### 0.1.7
 * added release notes and docs directory
