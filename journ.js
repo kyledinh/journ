@@ -31,13 +31,9 @@ APP.Journ = function (mode) {
 		console.log("Create file system at: ", cfg.journdir, cfg);
 	};
 
-	var newDay = function (daysAgo) {
+	var newDay = function () {
 		console.log("===== A New Day ====");
-		if (!isNaN(daysAgo)) {
-			api.recordLog(daysAgo * -1);
-		} else {
-			api.recordLog();
-		}
+		api.recordLog();
 	};
 
 	var processWeek = function (int) {
@@ -128,7 +124,7 @@ if (process.env.NODE_ENV !== 'test') {
 				Journ.showHelp();
 				break;
 			case Journ.NEW_FLAG:
-				Journ.newDay(args[3]);
+				Journ.newDay();
 				Journ.weekSummary();
 				break;
 			case Journ.WEEK_FLAG:

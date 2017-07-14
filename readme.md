@@ -72,6 +72,7 @@ drwxr-xr-x   6    204B Jul  4 09:43 2017
 ## Documents
 
 * [Release Notes](docs/release.md)
+* https://www.npmjs.com/package/journ
 
 ## References
 I've references these other repos for this project. You may want to check them out, they have
