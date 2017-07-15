@@ -1,5 +1,10 @@
 ## Release notes
 
+#### 1.0.1
+* Made `journ.cfg.json` hidden to `.journ.cfg.json`. Prepend a `.` to your config
+file if you are coming from the beta version. Also, if you have a config file in
+your home directory, it will use this if it's not in the working directory.
+
 #### 0.3.2
 * Added `pdf.css` to stylize the weeks pdfs. New cfg entry in `pdfcss` setting in `journ.cfg.json`.
 

@@ -54,7 +54,7 @@ APP.Journ = function (mode) {
 		console.log("====== JOURN USAGE ======\n");
 		console.log("journ ", "without args will display journal status.");
 		console.log("journ ", HELP_FLAG, " displays help.");
-		console.log("journ ", CONFIG_FLAG, " will create a journ.cfg.json file.");
+		console.log("journ ", CONFIG_FLAG, " will create a .journ.cfg.json file.");
 		console.log("journ ", SETUP_FLAG, " creates the file system.");
 		console.log("journ ", WRITE_FLAG, "'new entry' will append to the today.md.");
 		console.log("journ ", NEW_FLAG, " will archive today.md and start a new one.");
