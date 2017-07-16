@@ -33,7 +33,7 @@ APP.Journ = function (mode) {
 
 	var newDay = function () {
 		console.log("===== A New Day ====");
-		api.recordLog();
+		api.makeToday();
 	};
 
 	var processWeek = function (int) {
