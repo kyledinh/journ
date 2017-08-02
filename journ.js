@@ -10,11 +10,10 @@ APP.Journ = function (mode) {
 	var dater = new Dater();
 
 	var HELP_FLAG = 'help';
-	var LIST_FLAG = 'list';
 	var NEW_FLAG = 'new';
 	var SETUP_FLAG = 'setup';
 	var CONFIG_FLAG = 'config';
-	var WEEK_FLAG = 'week';
+	var WEEK_FLAG = 'w';
 	var WRITE_FLAG = '.';
 	var ADD_TASK_FLAG = '+';
 
@@ -36,15 +35,12 @@ APP.Journ = function (mode) {
 		api.makeToday();
 	};
 
-	var processWeek = function (int) {
-		if (!isNaN(int)) {
-			api.processWeek(int * -1);
-		} else {
-			api.lastWeek();
-		}
+	var pastWeekSummary = function (week, year) {
+		var cfg = api.readCfg();
+		api.pastWeekSummary(cfg, week, year);
 	};
 
-	var weekSummary = function (cfg) {
+	var currentWeekSummary = function (cfg) {
 		var cfg = cfg || api.readCfg();
 		api.weekSummary(cfg);
 	}
@@ -56,7 +52,8 @@ APP.Journ = function (mode) {
 		console.log("journ ", HELP_FLAG, " displays help.");
 		console.log("journ ", CONFIG_FLAG, " will create a .journ.cfg.json file.");
 		console.log("journ ", SETUP_FLAG, " creates the file system.");
-		console.log("journ ", WRITE_FLAG, "'new entry' will append to the today.md.");
+		console.log("journ ", WRITE_FLAG, " 'new entry' will append to the today.md.");
+		console.log("journ ", WEEK_FLAG, " '##' will create a summary for ## week.");
 		console.log("journ ", NEW_FLAG, " will archive today.md and start a new one.");
 		console.log("Your working directory is ", cfg.journdir);
 		console.log("\n");
@@ -87,10 +84,10 @@ APP.Journ = function (mode) {
 		config: config,
 		setup: setup,
 		newDay: newDay,
-		processWeek: processWeek,
+		pastWeekSummary: pastWeekSummary,
 		showHelp : showHelp,
 		showStatus: showStatus,
-		weekSummary: weekSummary,
+		currentWeekSummary: currentWeekSummary,
 		write: write,
 		addTask: addTask,
 		HELP_FLAG: HELP_FLAG,
@@ -125,11 +122,10 @@ if (process.env.NODE_ENV !== 'test') {
 				break;
 			case Journ.NEW_FLAG:
 				Journ.newDay();
-				Journ.weekSummary();
+				Journ.currentWeekSummary();
 				break;
 			case Journ.WEEK_FLAG:
-				Journ.processWeek(args[3]);
-				Journ.weekSummary();
+				Journ.pastWeekSummary(args[3], args[4]);
 				break;
 			case Journ.WRITE_FLAG:
 				Journ.write(args.slice(3));
@@ -142,6 +138,6 @@ if (process.env.NODE_ENV !== 'test') {
 		}
 	} else {
 		Journ.showStatus();
-		Journ.weekSummary();
+		Journ.currentWeekSummary();
 	}
 }

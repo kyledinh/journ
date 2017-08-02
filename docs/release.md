@@ -1,5 +1,8 @@
 ## Release notes
 
+#### 1.0.2
+* New feature `journ w ##` will create summary file and pdf for a past week.
+
 #### 1.0.1
 * Made `journ.cfg.json` hidden to `.journ.cfg.json`. Prepend a `.` to your config
 file if you are coming from the beta version. Also, if you have a config file in

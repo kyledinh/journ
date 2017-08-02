@@ -23,6 +23,10 @@ test('testing  ', function (t) {
 
 	t.deepEqual(12, dater.monthNum("December 3, 2017"));
 
+	t.deepEqual("W23", dater.fmtWeekISO8601(23));
+	t.deepEqual("W09", dater.fmtWeekISO8601(9));	
+	t.deepEqual("W01", dater.fmtWeekISO8601("w1"));
+
 	t.deepEqual("W27", dater.getWeekISO("July 9, 2017"));
 	t.deepEqual("W38", dater.getWeekISO("September 23, 2018"));
 	t.deepEqual("2018-W38-7", dater.fileName("September 23, 2018"));

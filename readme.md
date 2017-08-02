@@ -61,7 +61,7 @@ total 57
 drwxr--r--   9    306B Jul  5 07:10 .
 drwxr-xr-x+ 50    1.7K Jul  5 07:09 ..
 drwxr-xr-x   6    204B Jul  4 09:43 2017
--rw-r--r--   1     95B Jul  4 07:56 2017-W27-1.md 
+-rw-r--r--   1     95B Jul  4 07:56 2017-W27-1.md
 -rw-r--r--   1     29B Jul  4 07:57 2017-W27-2.md
 -rw-r--r--   1    747B Jul  3 10:08 pdf.css
 -rw-r--r--   1     46B Jul  3 10:08 task.md
@@ -73,6 +73,7 @@ drwxr-xr-x   6    204B Jul  4 09:43 2017
 
 * [Release Notes](docs/release.md)
 * https://www.npmjs.com/package/journ
+* reach me on Twitter: `@theronincoder`
 
 ## References
 I've references these other repos for this project. You may want to check them out, they have
