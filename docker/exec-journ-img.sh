@@ -2,8 +2,10 @@
 
 docker run -it --rm \
   --name journ-container \
-  -v "$PWD":/home/node \
+  -v "$PWD":/home/node/host \
   -w /home/node \
   journ-img \
-  $1 $2 $3
+  $*
+
+  
 #  /node_modules/journ/journ.js $1

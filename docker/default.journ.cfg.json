@@ -1,0 +1,6 @@
+{
+  "journdir":"/home/node/host",
+  "todayfile":"/home/node/host/today.md",
+  "taskfile":"/home/node/host/task.md",
+  "pdfcss":"/home/node/host/pdf.css"
+}
