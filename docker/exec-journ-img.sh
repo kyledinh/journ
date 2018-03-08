@@ -5,4 +5,5 @@ docker run -it --rm \
   -v "$PWD":/home/node \
   -w /home/node \
   journ-img \
-  /node_modules/journ/journ.js $1
+  $1 $2 $3
+#  /node_modules/journ/journ.js $1
