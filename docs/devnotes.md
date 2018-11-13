@@ -8,3 +8,5 @@ git push
 npm version patch -m "Version v0.1.4 - fixes dependencies" npm publish
 
 ```
+
+* `npm version patch -m "Version v1.0.3 - updated dependencies" npm publish`
