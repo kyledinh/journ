@@ -4,7 +4,7 @@ Installing Journ with Docker will create an image that will contain the Journ ap
 
 You can mount your local directory and run the Journ app with the command:
 ```
-docker run -it --rm -v "$PWD":/home/node -w /home/node journ-img journ help
+docker run -it --rm -v "$PWD":/home/node/host -w /home/node journ-img journ help
 ```
 Or use the shell script provided:
 ```

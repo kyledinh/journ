@@ -1,5 +1,8 @@
 ## Release notes
 
+#### 1.0.3
+* Updated for dependencies
+
 #### 1.0.2
 * New feature `journ w ##` will create summary file and pdf for a past week.
 
