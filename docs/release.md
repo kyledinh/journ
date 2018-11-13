@@ -1,6 +1,6 @@
 ## Release notes
 
-#### 1.0.3
+#### 1.0.4
 * Updated for dependencies
 
 #### 1.0.2
